@@ -1,0 +1,13 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	DATA_BEGIN        3001
+//	Input             3002
+//	DATA_END          3003
+//	MESSAGE1          3004
+//	MESSAGE2          3010
+//	MAIN              301E
+//	MESSAGE_1         3022
+//	END               3023
+

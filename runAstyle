@@ -1,0 +1,11 @@
+#!/bin/bash
+
+astyle  --style=allman --indent=tab   --indent-cases --indent-namespaces --indent-labels --indent-preprocessor --max-instatement-indent=40 --pad-oper --pad-header --unpad-paren --align-pointer=type --align-reference=type --break-closing-brackets --add-brackets --verbose --recursive *.cpp
+
+astyle  --style=allman --indent=tab   --indent-cases --indent-namespaces --indent-labels --indent-preprocessor --max-instatement-indent=40 --pad-oper --pad-header --unpad-paren --align-pointer=type --align-reference=type --break-closing-brackets --add-brackets --verbose --recursive *.c
+
+astyle  --style=allman --indent=tab   --indent-cases --indent-namespaces --indent-labels --indent-preprocessor --max-instatement-indent=40 --pad-oper --pad-header --unpad-paren --align-pointer=type --align-reference=type --break-closing-brackets --add-brackets --verbose --recursive *.h
+
+astyle  --style=allman --indent=tab   --indent-cases --indent-namespaces --indent-labels --indent-preprocessor --max-instatement-indent=40 --pad-oper --pad-header --unpad-paren --align-pointer=type --align-reference=type --break-closing-brackets --add-brackets --verbose --recursive *.java
+
+find /home/zZelman/ -iname "*.orig" -exec rm -v '{}' ';'

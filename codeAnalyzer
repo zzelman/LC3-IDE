@@ -1,0 +1,3 @@
+#!/bin/bash
+
+java -jar CodeAnalyzer-0.7.0.jar
