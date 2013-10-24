@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget* parent) :
 {
 	ui->setupUi(this);
 //	this->setCentralWidget(ui->textEdit);
-    setWindowTitle("LC3 IDE");
+	setWindowTitle("LC3 IDE");
 
 }
 
@@ -112,53 +112,53 @@ void MainWindow::on_actionRedo_triggered()
 
 void MainWindow::on_actionCompile_triggered()
 {
-    on_actionSave_triggered();
+	on_actionSave_triggered();
 
-    QString fileName            = "compileLog.txt";
-    std::string fileName_std    = "compileLog.txt";
+	QString fileName            = "compileLog.txt";
+	std::string fileName_std    = "compileLog.txt";
 
-    QFile file(fileName);
-    if (file.open(QFile::WriteOnly | QFile::Text))
-    {
-        file.close();
+	QFile file(fileName);
+	if (file.open(QFile::WriteOnly | QFile::Text))
+	{
+		file.close();
 
-        // remove old log
-        std::string removeCommand = "rm ";
-        removeCommand.append(fileName_std);
-        std::system(removeCommand.c_str());
+		// remove old log
+		std::string removeCommand = "rm ";
+		removeCommand.append(fileName_std);
+		std::system(removeCommand.c_str());
 
-        // assemble
-        std::string compileCommand = "lc3as \"";
-        compileCommand.append(m_fileName.toUtf8().constData());
-        compileCommand.append("\"");
-        compileCommand.append(" >> ");
-        compileCommand.append(fileName_std);
+		// assemble
+		std::string compileCommand = "lc3as \"";
+		compileCommand.append(m_fileName.toUtf8().constData());
+		compileCommand.append("\"");
+		compileCommand.append(" >> ");
+		compileCommand.append(fileName_std);
 
-        // compileCommand should now look like: lc3as "[this file]" >> compileLog.txt
-        std::system(compileCommand.c_str());
+		// compileCommand should now look like: lc3as "[this file]" >> compileLog.txt
+		std::system(compileCommand.c_str());
 
-        // show compile log in log console
-        QString file(fileName);
+		// show compile log in log console
+		QString file(fileName);
 
-        QFile sFile(file);
-        if (sFile.open(QFile::ReadOnly | QFile::Text))
-        {
-            QTextStream in(&sFile);
-            QString text = in.readAll();
-            sFile.close();
+		QFile sFile(file);
+		if (sFile.open(QFile::ReadOnly | QFile::Text))
+		{
+			QTextStream in(&sFile);
+			QString text = in.readAll();
+			sFile.close();
 
-            ui->console->setPlainText(text);
-        }
-    }
+			ui->console->setPlainText(text);
+		}
+	}
 }
 
 void MainWindow::on_actionRun_triggered()
 {
-    std::string run("lc3sim-tk \"");
-    run.append(m_fileName.toUtf8().constData());
-    run.erase(run.end()-3, run.end());
-    run.append("obj");
-    run.append("\" &");
+	std::string run("lc3sim-tk \"");
+	run.append(m_fileName.toUtf8().constData());
+	run.erase(run.end() - 3, run.end());
+	run.append("obj");
+	run.append("\" &");
 
-    std::system(run.c_str());
+	std::system(run.c_str());
 }

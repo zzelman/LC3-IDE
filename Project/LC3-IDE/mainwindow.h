@@ -37,9 +37,9 @@ private slots:
 
 	void on_actionRedo_triggered();
 
-    void on_actionCompile_triggered();
+	void on_actionCompile_triggered();
 
-    void on_actionRun_triggered();
+	void on_actionRun_triggered();
 
 private:
 	Ui::MainWindow* ui;
