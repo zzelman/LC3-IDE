@@ -1,0 +1,4 @@
+#+Title: LC3-IDE
+#+AUTHOR: Kyle Avrett
+
+As a sophomore in college I took a class that wrote Assembly in a language called LC3. At the time I did not understand how to use the Linux terminal that well, so I created a very small QT GUI to automate the writing, compilation and running of LC3. Technically it is an IDE, but only in the sense that it does the compilation and running for you, but nothing else.
